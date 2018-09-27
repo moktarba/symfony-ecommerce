@@ -1,0 +1,121 @@
+{% set identifiant = 0 %}
+
+ {% extends '::base.html.twig' %}
+ {% block container %}
+    <div class="container">
+        <div class="row pub ">
+           <h4>Panier / validation</h4>
+        </div>
+
+	
+        <div class="row pub panier">
+          <div class ="col-md-12">
+            
+            
+            <div class="card text-center">
+              <div class="card-header">
+                Mes Adresses 
+              </div>
+              <div class="card-body ">
+                <h5 class="card-title">Adresse de Livraison</h5>
+                <p class="card-text">{{commande.commande.livraison.adresse}}, {{commande.commande.livraison.cp}} - {{commande.commande.livraison.ville}}</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Adresse de Facturation</h5>
+                <p class="card-text">{{commande.commande.facturation.adresse}}, {{commande.commande.facturation.cp}} - {{commande.commande.facturation.ville}}</p>
+              </div>
+              <div class="card-footer text-muted">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <table class="table  table-responsive" id="panier"  >
+              <thead class="thead-default">
+                <tr>
+                  <th>#</th>
+                  <th>Produit</th>
+                  <th>Qte</th>
+                  <th>Prix Unit. HT</th>
+                  <th>Prix total HT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for produit in commande.commande.produit %}
+                  {% set identifiant  = identifiant + 1 %}
+                  <tr>
+                      <td scope="row">{{identifiant}}</td>
+                      <td class="product_name"><a href="">{{produit.reference}}</a></td>
+                      <td>
+                            {{produit.quantite}} 
+                      </td>
+                      <td>{{produit.prixHT}} €</td>
+                      <td id="total-1"><span>{{produit.prixHT * produit.quantite}}</span> €</td>
+                  </tr>
+                {% endfor %}
+                                                          
+                <tr class="">
+                  <td colspan="4" class="text-right "> Total HT</td>
+                  <td  id="totalht"><span>{{commande.commande.totalHT}}</span> €</td>
+                </tr>
+                {% for key, tva in commande.commande.tva %}
+                <tr class="">
+                  <td colspan="4" class="text-right "><dt>TVA {{key}} : </dt>  {{tva}}  </td>
+                  
+                </tr>
+                {% endfor %}
+                <tr class="total ">
+                  <td colspan="4" class="text-right"> Total</td>
+                  <td   id="total"><span>{{commande.commande.totalTTC}}</span> €</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          <div class="row">
+             <div class="col-md-6 text-left">
+              <a href="panier" class="btn btn-icon btn-primary  "><i class="fa fa-shopping-cart"></i><span>Retour au panier</span></a>
+            </div>
+            <div class="col-md-6 text-right">
+              <form method = "POST" action = "{{ path("validerCommande", {'id' : commande.id }) }}">
+                <input type="hidden" name="token" value="{{commande.commande.token}}">
+                <input type="hidden" name="prix" value="{{commande.commande.totalTTC}}">
+                <input type="hidden" name="date" value="{{ 'now' | date('d/m/Y')}}">
+                <button type="submit" class="btn btn-icon btn-black"><i class="fa fa-money"></i><span>Payer le panier</span></button>
+              </form>
+            </div>
+         </div>
+        </div>
+
+        <span class="titre_header">Quelques Informations </span>
+
+            <div class="row">
+                <div class="col-md-3 ">
+                   <a href="#" class="pub pub-center ">
+                         <span class="pub-icon "><i class="fa fa-users"></i></span>
+                         <h4> Nos clients </h4>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+                        <h4> Garantie produits </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+               <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+                        <h4>Promotions </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+                        <h4>Paiement sécurisé </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+            </div>        
+    </div>
+{% endblock %}

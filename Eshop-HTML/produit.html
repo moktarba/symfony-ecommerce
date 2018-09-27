@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>E-shop - 	Quam provident debitis amet est fuga amet.
+</title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- font awsome version 4.7.0 -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Styles -->
+
+    
+    <link href="css/style.css" rel="stylesheet">
+       
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="container">
+          <div class="top_header rounded-top">
+              <div class="header_infos">
+                  <ul>
+                    <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    athakim <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="user/profil">Mon compte</a></li>
+                                    <li>
+                                        <a href="logout"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="logout" method="POST" style="display: none;">
+                                            <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                                              
+                      <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                      <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                      <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                  </ul>
+              </div>
+              <div class="row">
+                  <div class="col-md-3 logo">
+                      <img src="img/logo.png" alt="logo">
+                  </div>
+                   <div class="col-md-6 search">
+                      <form class=" my-2 my-lg-0" action="search" method="POST">
+                        <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                        <input class="form-control " type="text" placeholder="Search" aria-label="Search" name="q">
+                        <button class="btn  rounded-right" type="submit">Search</button>
+                      </form>
+                  </div>
+                   <div class="col-md-3 infos">
+                      <i class="fa fa-phone"></i>
+                      <span>06 12 34 56 78</span>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 menu">
+                  <div class="main_menu rounded-top">
+                      <nav class="navbar navbar-expand-md ">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                      
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notre Catalogue</a>
+                          <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+                                                        <a  class="dropdown-item" href="catalogue/eos-recusandae-ab">Eos recusandae ab.</a> 
+                                                        <a  class="dropdown-item" href="catalogue/vitae-et">Vitae et.</a> 
+                                                        <a  class="dropdown-item" href="catalogue/aspernatur-repellat">Aspernatur repellat.</a> 
+                                                        <a  class="dropdown-item" href="catalogue/officia-sequi">Officia sequi.</a> 
+                                                        <a  class="dropdown-item" href="catalogue/enim-amet-est">Enim amet est.</a> 
+                                                      </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#">Aide & Support</a>
+                          <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="page/aide">Aide </a>
+                            <a class="dropdown-item" href="page/qui-sommes-nous">Qui sommes nous ? </a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="nous%20contacter">Nous contacter</a>
+                        </li>
+                      </ul>
+                     
+                    </div>
+                  </nav>
+                  </div>
+                  <div class="cart ">
+                      <i class="fa fa-shopping-cart"></i>
+                      <a href="panier" >Panier: (3) items</a>
+                  </div>
+              </div>
+             
+          </div>
+      </div>
+     
+      
+  </div>
+      <div class="container single-product ">
+        <div class="row ">
+            <div class="col-md-4 ">
+                <div class="image">
+                    <img src="https://lorempixel.com/400/400/nature/Faker/?75781" alt="image" id="visuel">
+                    <ul class="tumbnails">
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/technics/Faker/?74066" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/technics/Faker/?42844" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/technics/Faker/?74402" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/food/Faker/?62968" class="thumb-visuel" ></a></li>
+                                          </ul>
+                </div>
+            </div>
+            <div class="col-md-5 infos">
+                <h4>Quam provident debitis amet est fuga amet.</h4>
+                <p>Ut adipisci facilis molestiae eaque. Nisi culpa explicabo ut accusamus. Officia iusto saepe praesentium est quas officia maiores. Deleniti odit corrupti deserunt suscipit.</p>
+                <ul>    
+                    <li>Taille : M </li>
+                    <li>Poids : 2 kg</li>
+                    <li>Cateégorie: Officia sequi.</li>
+
+                </ul>
+
+                <div class="tags">
+                    <ul>
+                        <li><a href="catalogue/tag/numquam-repellat">Numquam repellat.</a></li>
+                        <li><a href="catalogue/tag/repellat-fugit">Repellat fugit.</a></li>
+                        <li><a href="catalogue/tag/commodi-consequatur">Commodi consequatur.</a></li>
+                        <li><a href="catalogue/tag/sed-reprehenderit">Sed reprehenderit.</a></li>
+                    </ul>
+                </div>
+                 
+            </div>
+            <div class="col-md-3 prix">
+                                <span class="price promo">26.7 € </span>  <em class="promo">33.37 €</em>
+                
+                 <div>
+                    <p>Stock : 100 pièces </p>
+                    <form  method="POST" action="panier/add">
+                      <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                      <input  name="slug" type="hidden" value="quam-provident-debitis-amet-est-fuga-amet">
+                        <div class="row mt-4">
+                            <div class="col-md-6"><label for="qte">Quantité:</label></div>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-secondary subOneProduct  " type="button" data-input="2">-</button>
+                                  </span>
+                                  <input type="text" class="form-control" id="input-2"  aria-label="qte" value="1" readonly name="qte">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-secondary addOneProduct " type="button"  data-input="2">+</button>
+                                  </span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-md-12">
+                            <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                                                                                        <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+                              
+                         </div> 
+                        </div>
+                    </form>
+                 </div>
+                 <div class="row mt-4">
+                     
+                     <div class="line-top">
+                     <ul class="social">
+                        <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                    </ul>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="row pub">
+            <div class=" description">
+              <h4>Déscription :</h4>
+            <p>Ut adipisci facilis molestiae eaque. Nisi culpa explicabo ut accusamus. Officia iusto saepe praesentium est quas officia maiores. Deleniti odit corrupti deserunt suscipit.</p>
+            </div>  
+
+        </div>
+        <div class="products">
+          <div class="header_title"><h4>Voir aussi </h4></div>
+           <div class="row">
+          
+                              <div class="col-md-3 ">
+                  <div class="product">
+    
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/modi-beatae-et-eos-totam"><img src="https://lorempixel.com/400/400/food/Faker/?22531" alt="Modi beatae et eos totam."></a>
+    
+    <h4>Modi beatae et eos totam.</h4>
+    <p>Natus porro repellat reiciendis dicta qui sunt. Fuga consequatur possimus autem error mollitia perfe...</p>
+     <div class="actions">
+        
+                <span class="price ">10.99 € </span>
+            <a href="panier/add/modi-beatae-et-eos-totam" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/modi-beatae-et-eos-totam" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=13><i class="fa fa-heart"></i></a>
+        
+    
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+    
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/qui-cumque-quibusdam-velit-delectus-eum-temporibus"><img src="https://lorempixel.com/400/400/nature/Faker/?73006" alt="Qui cumque quibusdam velit delectus eum temporibus."></a>
+    
+    <h4>Qui cumque quibusdam velit delectus eum temporibus.</h4>
+    <p>Omnis ipsum nisi quidem laborum error amet. Neque ullam placeat corrupti placeat voluptate voluptatu...</p>
+     <div class="actions">
+        
+                <span class="price ">6.71 € </span>
+            <a href="panier/add/qui-cumque-quibusdam-velit-delectus-eum-temporibus" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/qui-cumque-quibusdam-velit-delectus-eum-temporibus" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=48><i class="fa fa-heart"></i></a>
+        
+    
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+    
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/itaque-nesciunt-et-et-sequi-atque-molestias"><img src="https://lorempixel.com/400/400/sports/Faker/?38429" alt="Itaque nesciunt et et sequi atque molestias."></a>
+    
+    <h4>Itaque nesciunt et et sequi atque molestias.</h4>
+    <p>Debitis blanditiis dolor eveniet sequi praesentium mollitia omnis. Reprehenderit vel quidem id conse...</p>
+     <div class="actions">
+        
+                <span class="price ">1.86 € </span>
+            <a href="panier/add/itaque-nesciunt-et-et-sequi-atque-molestias" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/itaque-nesciunt-et-et-sequi-atque-molestias" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=18><i class="fa fa-heart"></i></a>
+        
+    
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+    
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/sequi-quia-nihil-natus-in"><img src="https://lorempixel.com/400/400/business/Faker/?64292" alt="Sequi quia nihil natus in."></a>
+    
+    <h4>Sequi quia nihil natus in.</h4>
+    <p>Saepe nam numquam perspiciatis alias veniam soluta hic earum. Non et modi vel culpa dolores illum. C...</p>
+     <div class="actions">
+        
+                <span class="price ">24.73 € </span>
+            <a href="panier/add/sequi-quia-nihil-natus-in" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/sequi-quia-nihil-natus-in" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=10><i class="fa fa-heart"></i></a>
+        
+    
+
+                 </div>
+              </div>               
+               </div>
+            </div>
+      </div>
+  </div>
+
+    
+
+    
+    <div class="footer">
+        <div class="container">
+           <div class="row">
+                <div class="col-md-6">
+                    <h4 class="line-bottom">About</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Informations</h4>
+                    <ul class="list-item">
+                        <li><a href="">CGV / CGU</a> </li>
+                        <li><a href="">Mentions légales </a> </li>
+                        <li><a href="">Nos services</a> </li>
+                        <li><a href="">Nous contacter</a> </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Newsletter</h4>
+                </div>
+           </div>
+           <div class="row line footer_infos">
+               
+                    <div class="col-md-6"><p class="copyright">Copyright - athakim (c) 2017 - Tous les droits réservés . </p></div>  
+                     <div class="col-md-6">
+                        <ul>
+                            <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                            <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                            <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                        </ul>
+                    </div>
+           </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!--  <script src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="js/stripe.js"></script> -->
+
+
+<script type="text/javascript" src="js/app.js"></script>
+
+  </body>
+</html>

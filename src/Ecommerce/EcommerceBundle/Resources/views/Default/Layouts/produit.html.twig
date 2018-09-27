@@ -1,0 +1,183 @@
+{% extends "::base.html.twig" %}
+{% block container %}
+      <div class="container single-product ">
+        <div class="row ">
+            <div class="col-md-4 ">
+                <div class="image">
+                    <img src="{{produit.image.path}}" alt="image" id="visuel">
+                    <ul class="tumbnails">
+                                              <li><a href="#"><img src="{{produit.image.path}}" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/technics/Faker/?42844" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/technics/Faker/?74402" class="thumb-visuel" ></a></li>
+                                              <li><a href="#"><img src="https://lorempixel.com/400/400/food/Faker/?62968" class="thumb-visuel" ></a></li>
+                                          </ul>
+                </div>
+            </div>
+            <div class="col-md-5 infos">
+                <h4>{{produit.nom}}</h4>
+                <p>{{produit.description}}</p>
+                <ul>
+                    <li>Taille : M </li>
+                    <li>Poids : 2 kg</li>
+                    <li>Catégorie: {{produit.category.nom}}</li>
+
+                </ul>
+
+                <div class="tags">
+                    <ul>
+                        <li><a href="catalogue/tag/numquam-repellat">Numquam repellat.</a></li>
+                        <li><a href="catalogue/tag/repellat-fugit">Repellat fugit.</a></li>
+                        <li><a href="catalogue/tag/commodi-consequatur">Commodi consequatur.</a></li>
+                        <li><a href="catalogue/tag/sed-reprehenderit">Sed reprehenderit.</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-3 prix">
+                                <span class="price promo">{{produit.prix}}€ </span>  <em class="promo">33.37 €</em>
+
+                 <div>
+                    <p>Stock : 100 pièces </p>
+                    <form  method="GET" action="{{path('ajouter', {'id' : produit.id }) }}">
+                      <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                      <input  name="slug" type="hidden" value="quam-provident-debitis-amet-est-fuga-amet">
+                        <div class="row mt-4">
+                            <div class="col-md-6"><label for="qte">Quantité:</label></div>
+                            <div class="col-md-6">
+                              <select name="qte">
+                                {% for i in 1..10 %}
+                                <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+
+                          <div class="col-md-12">
+                          {% if panier[produit.id] is not defined %}
+                            <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>Ajouter au panier</span></button>
+                               <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+                          {% else %}
+                            <button  type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><span>voir le panier</span></button>
+                               <a href="{{path('panier')}}" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+                          {% endif %}
+
+                         </div>
+                        </div>
+                    </form>
+                 </div>
+                 <div class="row mt-4">
+
+                     <div class="line-top">
+                     <ul class="social">
+                        <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                    </ul>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="row pub">
+            <div class=" description">
+              <h4>Déscription :</h4>
+            <p>Ut adipisci facilis molestiae eaque. Nisi culpa explicabo ut accusamus. Officia iusto saepe praesentium est quas officia maiores. Deleniti odit corrupti deserunt suscipit.</p>
+            </div>
+
+        </div>
+        <div class="products">
+          <div class="header_title"><h4>Voir aussi </h4></div>
+           <div class="row">
+
+                              <div class="col-md-3 ">
+                  <div class="product">
+
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/modi-beatae-et-eos-totam"><img src="https://lorempixel.com/400/400/food/Faker/?22531" alt="Modi beatae et eos totam."></a>
+
+    <h4>Modi beatae et eos totam.</h4>
+    <p>Natus porro repellat reiciendis dicta qui sunt. Fuga consequatur possimus autem error mollitia perfe...</p>
+     <div class="actions">
+
+                <span class="price ">10.99 € </span>
+            <a href="panier/add/modi-beatae-et-eos-totam" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/modi-beatae-et-eos-totam" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=13><i class="fa fa-heart"></i></a>
+
+
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/qui-cumque-quibusdam-velit-delectus-eum-temporibus"><img src="https://lorempixel.com/400/400/nature/Faker/?73006" alt="Qui cumque quibusdam velit delectus eum temporibus."></a>
+
+    <h4>Qui cumque quibusdam velit delectus eum temporibus.</h4>
+    <p>Omnis ipsum nisi quidem laborum error amet. Neque ullam placeat corrupti placeat voluptate voluptatu...</p>
+     <div class="actions">
+
+                <span class="price ">6.71 € </span>
+            <a href="panier/add/qui-cumque-quibusdam-velit-delectus-eum-temporibus" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/qui-cumque-quibusdam-velit-delectus-eum-temporibus" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=48><i class="fa fa-heart"></i></a>
+
+
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/itaque-nesciunt-et-et-sequi-atque-molestias"><img src="https://lorempixel.com/400/400/sports/Faker/?38429" alt="Itaque nesciunt et et sequi atque molestias."></a>
+
+    <h4>Itaque nesciunt et et sequi atque molestias.</h4>
+    <p>Debitis blanditiis dolor eveniet sequi praesentium mollitia omnis. Reprehenderit vel quidem id conse...</p>
+     <div class="actions">
+
+                <span class="price ">1.86 € </span>
+            <a href="panier/add/itaque-nesciunt-et-et-sequi-atque-molestias" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/itaque-nesciunt-et-et-sequi-atque-molestias" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=18><i class="fa fa-heart"></i></a>
+
+
+
+   </div>
+</div>                </div>
+                              <div class="col-md-3 ">
+                  <div class="product">
+
+   <!--  <span class="bulle">Infos</span> -->
+       <!-- <span class="bulle bulle-primary">New</span> -->
+
+    <a href="produit/sequi-quia-nihil-natus-in"><img src="https://lorempixel.com/400/400/business/Faker/?64292" alt="Sequi quia nihil natus in."></a>
+
+    <h4>Sequi quia nihil natus in.</h4>
+    <p>Saepe nam numquam perspiciatis alias veniam soluta hic earum. Non et modi vel culpa dolores illum. C...</p>
+     <div class="actions">
+
+                <span class="price ">24.73 € </span>
+            <a href="panier/add/sequi-quia-nihil-natus-in" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+    <a href="produit/sequi-quia-nihil-natus-in" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=10><i class="fa fa-heart"></i></a>
+
+
+
+                 </div>
+              </div>
+               </div>
+            </div>
+      </div>
+  </div>
+
+{% endblock %}

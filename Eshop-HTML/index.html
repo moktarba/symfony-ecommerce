@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>E-shop -    Acceuil du site </title>
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- font awsome version 4.7.0 -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    
+    <link href="css/style.css" rel="stylesheet">
+       
+  </head>
+
+    <body>
+
+    <div class="header">
+        <div class="container">
+            <div class="top_header rounded-top">
+                <div class="header_infos">
+                    <ul>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        athakim <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a href="user/profil">Mon compte</a></li>
+                        <li>
+                        <a href="logout"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        Logout
+                        </a>
+
+                        <form id="logout-form" action="logout" method="POST" style="display: none;">
+                        <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                        </form>
+                        </li>
+                        </ul>
+                        </li>
+
+                        <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 logo">
+                        <img src="img/logo.png" alt="logo">
+                    </div>
+                    <div class="col-md-6 search">
+                        <form class=" my-2 my-lg-0" action="search" method="POST">
+                            <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                            <input class="form-control " type="text" placeholder="Search" aria-label="Search" name="q">
+                            <button class="btn  rounded-right" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="col-md-3 infos">
+                        <i class="fa fa-phone"></i>
+                        <span>06 12 34 56 78</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 menu">
+                    <div class="main_menu rounded-top">
+                        <nav class="navbar navbar-expand-md ">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                    <a class="nav-link" href="http://shop.dev/home">Home <span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notre Catalogue</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+
+                                    <a  class="dropdown-item" href="http://shop.dev/catalogue/eos-recusandae-ab">Eos recusandae ab.</a> 
+                                    <a  class="dropdown-item" href="http://shop.dev/catalogue/vitae-et">Vitae et.</a> 
+                                    <a  class="dropdown-item" href="http://shop.dev/catalogue/aspernatur-repellat">Aspernatur repellat.</a> 
+                                    <a  class="dropdown-item" href="http://shop.dev/catalogue/officia-sequi">Officia sequi.</a> 
+                                    <a  class="dropdown-item" href="http://shop.dev/catalogue/enim-amet-est">Enim amet est.</a> 
+                                    </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#">Aide & Support</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <a class="dropdown-item" href="http://shop.dev/page/aide">Aide </a>
+                                    <a class="dropdown-item" href="http://shop.dev/page/qui-sommes-nous">Qui sommes nous ? </a>
+                                    </div>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="http://shop.dev/nous%20contacter">Nous contacter</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="cart ">
+                        <i class="fa fa-shopping-cart"></i>
+                        <a href="http://shop.dev/panier" >Panier: (0) items</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 contenu">
+                <div class="jumbotron">
+                    <h1 class="display-3">E-shop , En ligne !</h1>
+                    <p>Donec vitae erat rutrum, scelerisque erat a, elementum arcu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ultricies luctus tincidunt. Suspendisse accumsan elementum orci ut congue. Nulla laoreet libero sem, sit amet dapibus dui condimentum et. Nunc eget elit eu enim suscipit elementum nec eu libero. Pellentesque ac imperdiet nisi. Mauris facilisis, turpis in vehicula faucibus, leo nisi pulvinar sapien, ut maximus justo tortor in turpis.</p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                </div>
+                <div class=" row pubs">
+                    <div class="col-md-6 ">
+                        <div class="pub  ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Iusto quis quasi eos sapiente dolore voluptatem laudantium sed.</h4>
+                                    <p>Ipsam pariatur provident ullam voluptatem qui. Commodi et eum suscipit aspernatur et sit laborum. Iu... </p>
+                                    <a href="http://shop.dev/produit/iusto-quis-quasi-eos-sapiente-dolore-voluptatem-laudantium-sed">voir détails</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="https://lorempixel.com/400/400/sports/Faker/?49596" alt="Iusto quis quasi eos sapiente dolore voluptatem laudantium sed.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="pub pub-primary ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Et non quia molestiae cumque sed quibusdam.</h4>
+                                    <p>Quod autem facilis quia ratione reprehenderit. Omnis id ut quia facere est ipsam reiciendis. Consequ... </p>
+                                    <a href="http://shop.dev/produit/et-non-quia-molestiae-cumque-sed-quibusdam">voir détails</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="https://lorempixel.com/400/400/technics/Faker/?69498" alt="Et non quia molestiae cumque sed quibusdam.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="  products">
+                    <div class="header_title"><h4>Featured Products </h4></div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="product">
+                                <!--  <span class="bulle">Infos</span> -->
+                                <span class="bulle bulle-promo">Promo</span>
+                                <!-- <span class="bulle bulle-primary">New</span> -->
+
+                                <a href="http://shop.dev/produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit"><img src="https://lorempixel.com/400/400/people/Faker/?16318" alt="Voluptas possimus consequuntur ut voluptas ut aut sit."></a>
+
+                                <h4>Voluptas possimus consequuntur ut voluptas ut aut sit.</h4>
+                                <p>Fugiat dicta eius corrupti ea quae. Dicta sint est ipsam ut. Rerum quia velit ipsa vel. Tenetur dolo...</p>
+                                <div class="actions">
+                                    <span class="price promo">27.21 € </span>  <em class="promo">34.01 €</em>
+                                    <a href="http://shop.dev/panier/add/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                                    <a href="http://shop.dev/produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                                    <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=1><i class="fa fa-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <span class="bulle bulle-promo">Promo</span>
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/quam-provident-debitis-amet-est-fuga-amet"><img src="https://lorempixel.com/400/400/nature/Faker/?75781" alt="Quam provident debitis amet est fuga amet."></a>
+
+                            <h4>Quam provident debitis amet est fuga amet.</h4>
+                            <p>Ut adipisci facilis molestiae eaque. Nisi culpa explicabo ut accusamus. Officia iusto saepe praesent...</p>
+                            <div class="actions">
+
+                            <span class="price promo">26.7 € </span>  <em class="promo">33.37 €</em>
+                            <a href="http://shop.dev/panier/add/quam-provident-debitis-amet-est-fuga-amet" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/quam-provident-debitis-amet-est-fuga-amet" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                        
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/voluptas-molestiae-sapiente-consequatur-illo-laborum-inventore"><img src="https://lorempixel.com/400/400/fashion/Faker/?71179" alt="Voluptas molestiae sapiente consequatur illo laborum inventore."></a>
+
+                            <h4>Voluptas molestiae sapiente consequatur illo laborum inventore.</h4>
+                            <p>Rem repellat amet id sed iusto officia non. Et soluta corporis quos animi animi suscipit maxime sint...</p>
+                            <div class="actions">
+
+                            <span class="price ">43.77 € </span>
+                            <a href="http://shop.dev/panier/add/voluptas-molestiae-sapiente-consequatur-illo-laborum-inventore" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/voluptas-molestiae-sapiente-consequatur-illo-laborum-inventore" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=3><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                        
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/labore-eos-reiciendis-non-facere-accusantium-reiciendis"><img src="https://lorempixel.com/400/400/technics/Faker/?46289" alt="Labore eos reiciendis non facere accusantium reiciendis."></a>
+
+                            <h4>Labore eos reiciendis non facere accusantium reiciendis.</h4>
+                            <p>Et laboriosam natus quia a officia. Numquam illo deleniti ex doloribus iste molestias nihil. Illum d...</p>
+                            <div class="actions">
+
+                            <span class="price ">41.57 € </span>
+                            <a href="http://shop.dev/panier/add/labore-eos-reiciendis-non-facere-accusantium-reiciendis" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/labore-eos-reiciendis-non-facere-accusantium-reiciendis" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=4><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                       
+                        </div>
+                    </div>
+                </div>
+                <div class=" products promotions">
+                    <div class="header_title"><h4>Promotions Products </h4></div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="product">
+                                <!--  <span class="bulle">Infos</span> -->
+                                <span class="bulle bulle-promo">Promo</span>
+                                <!-- <span class="bulle bulle-primary">New</span> -->
+
+                                <a href="http://shop.dev/produit/tempora-praesentium-esse-excepturi-dolor-et-magnam-tenetur-sunt"><img src="https://lorempixel.com/400/400/people/Faker/?83314" alt="Tempora praesentium esse excepturi dolor et magnam tenetur sunt."></a>
+
+                                <h4>Tempora praesentium esse excepturi dolor et magnam tenetur sunt.</h4>
+                                <p>Qui enim rerum ipsa voluptatibus occaecati neque esse. Quia optio veniam quisquam et possimus. Adipi...</p>
+                                <div class="actions">
+
+                                <span class="price promo">28.38 € </span>  <em class="promo">35.47 €</em>
+                                <a href="http://shop.dev/panier/add/tempora-praesentium-esse-excepturi-dolor-et-magnam-tenetur-sunt" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                                <a href="http://shop.dev/produit/tempora-praesentium-esse-excepturi-dolor-et-magnam-tenetur-sunt" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=15><i class="fa fa-heart"></i></a>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <span class="bulle bulle-promo">Promo</span>
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/autem-reprehenderit-dolor-harum-consequatur"><img src="https://lorempixel.com/400/400/nature/Faker/?42465" alt="Autem reprehenderit dolor harum consequatur."></a>
+
+                            <h4>Autem reprehenderit dolor harum consequatur.</h4>
+                            <p>Veritatis quia voluptate suscipit doloremque quas aliquam veritatis perspiciatis. Et deserunt laboru...</p>
+                            <div class="actions">
+
+                            <span class="price promo">27.57 € </span>  <em class="promo">34.46 €</em>
+                            <a href="http://shop.dev/panier/add/autem-reprehenderit-dolor-harum-consequatur" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/autem-reprehenderit-dolor-harum-consequatur" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=21><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                    
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <span class="bulle bulle-promo">Promo</span>
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/quam-provident-debitis-amet-est-fuga-amet"><img src="https://lorempixel.com/400/400/nature/Faker/?75781" alt="Quam provident debitis amet est fuga amet."></a>
+
+                            <h4>Quam provident debitis amet est fuga amet.</h4>
+                            <p>Ut adipisci facilis molestiae eaque. Nisi culpa explicabo ut accusamus. Officia iusto saepe praesent...</p>
+                            <div class="actions">
+
+                            <span class="price promo">26.7 € </span>  <em class="promo">33.37 €</em>
+                            <a href="http://shop.dev/panier/add/quam-provident-debitis-amet-est-fuga-amet" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/quam-provident-debitis-amet-est-fuga-amet" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=2><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                    
+                        </div>
+                        <div class="col-md-3">
+                            <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <span class="bulle bulle-promo">Promo</span>
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="http://shop.dev/produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit"><img src="https://lorempixel.com/400/400/people/Faker/?16318" alt="Voluptas possimus consequuntur ut voluptas ut aut sit."></a>
+
+                            <h4>Voluptas possimus consequuntur ut voluptas ut aut sit.</h4>
+                            <p>Fugiat dicta eius corrupti ea quae. Dicta sint est ipsam ut. Rerum quia velit ipsa vel. Tenetur dolo...</p>
+                            <div class="actions">
+
+                            <span class="price promo">27.21 € </span>  <em class="promo">34.01 €</em>
+                            <a href="http://shop.dev/panier/add/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a href="http://shop.dev/produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                            <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=1><i class="fa fa-heart"></i></a>
+
+
+
+                            </div>
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="titre_header">Quelques Informations </span>
+
+        <div class="row">
+            <div class="col-md-3 ">
+                <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-users"></i></span>
+                <h4> Nos clients </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                </a>
+            </div>
+            <div class="col-md-3  ">
+                <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+                <h4> Garantie produits </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                </a>
+            </div>
+            <div class="col-md-3  ">
+                <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+                <h4>Promotions </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                </a>
+            </div>
+            <div class="col-md-3  ">
+                <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+                <h4>Paiement sécurisé </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="line-bottom">About</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Informations</h4>
+                    <ul class="list-item">
+                    <li><a href="">CGV / CGU</a> </li>
+                    <li><a href="">Mentions légales </a> </li>
+                    <li><a href="">Nos services</a> </li>
+                    <li><a href="">Nous contacter</a> </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Newsletter</h4>
+                </div>
+            </div>
+            <div class="row line footer_infos">
+                <div class="col-md-6"><p class="copyright">Copyright - athakim (c) 2017 - Tous les droits réservés . </p></div>  
+                <div class="col-md-6">
+                    <ul>
+                        <li> <a href=""><i class="fa fa-google-plus"></i></a> </li>
+                        <li> <a href=""><i class="fa fa-facebook"></i></a> </li>
+                     <li> <a href=""><i class="fa fa-twitter"></i></a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!--  <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript" src="http://shop.dev/js/stripe.js"></script> -->
+
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+    </body>
+</html>

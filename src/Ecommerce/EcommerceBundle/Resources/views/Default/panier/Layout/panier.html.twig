@@ -1,0 +1,128 @@
+{% extends "::base.html.twig"  %}
+{% block container %}
+  {% set totalHT = 0 %}
+  {% set totalTva = 0 %}
+  {% set nbrCmd = 0 %}
+            <div class="container">
+              {% for message in app.session.flashbag.get("success") %}
+              <div class="alert alert-success">{{message}}</div>
+              {% endfor %}
+              {% for message in app.session.flashbag.get('supp-article') %}
+              <div class="alert alert-success">{{message}}</div>
+              {% endfor %}
+        <div class="row pub ">
+           <h4>Panier</h4>
+        </div>
+
+		        <div class="row pub panier">
+          	<table class="table  table-responsive" id="panier">
+		            <thead class="thead-default">
+		              <tr>
+		                <th>#</th>
+		                <th>Produit</th>
+		                <th>Qte</th>
+		                <th>Prix Unit. HT</th>
+		                <th>Prix total HT</th>
+		                <th></th>
+		              </tr>
+		            </thead>
+		            <tbody>
+                  {% for produit in produits %}
+                  {% set nbrCmd  = nbrCmd +1 %}
+		            		<tr>
+			                <td scope="row">{{nbrCmd}}</td>
+			                <td class="product_name"><a href="produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit">{{produit.nom}}</a></td>
+			                <td>
+                          <form action="{{ path('ajouter', {'id': produit.id }) }}" >
+
+		                        <div class="input-group-sm">
+                               <select name='qte' onChange="this.form.submit()">
+                                {% for i in 1..10 %}
+                                  <option  value = {{i}} {% if i == panier[produit.id]  %} selected="selected" {% endif %}>{{i}}</option>
+                              {% endfor %}
+                              </select>
+		                        </div>
+                          </form>
+			                </td>
+		                	<td>{{produit.prix}} €</td>
+		                	<td id="total-1"><span>{{produit.prix * panier[produit.id]}}</span> €</td>
+		                	<td><a href="{{path('supprimer', {'id' : produit.id} )}}" class="btn btn-icon btn-danger "> <i class="fa fa-trash">X</i></a></td>
+		              	</tr>
+                    {% set totalHT = totalHT + produit.prix * panier[produit.id]  %}
+                    {% set totalTva = totalTva + ((produit.prix * 0.02) * panier[produit.id])   %}
+                    {% endfor %}
+			              <tr>
+		              	 <td colspan="2"><form method="POST" action="">
+      						  	<form class="form-inline">
+      							  		<input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+      								  <div class="form-group ">
+      								    <label for="coupon" class="">Coupon de réduction</label>
+      								    <input type="text" class="form-control" id="coupon" placeholder="Ex: REMISE20">
+      								  </div>
+      								  <button type="submit" class="btn btn-primary">Appliqer le coupon</button>
+      							   </form>
+						          </td>
+						          <td colspan="4"></td>
+		                </tr>
+		              	
+		              <tr class="">
+		                <td colspan="4" class="text-right "> Total HT</td>
+		                <td  colspan="2"id="totalht"><span>{{totalHT}}</span> €</td>
+		              </tr>
+		              <tr class="">
+		                <td colspan="4" class="text-right "> T.V.A </td>
+		                <td colspan="2" id="tax"><span>{{totalTva}}</span> €</td>
+		              </tr>
+		              <tr class="total ">
+		                <td colspan="4" class="text-right"> Total</td>
+		                <td  colspan="2" id="total"><span>{{totalTva + totalHT}}</span> €</td>
+		              </tr>
+		            </tbody>
+
+		          </table>
+          			<div class="row">
+			             <div class="col-md-6 text-left">
+			              <a href="{{path('produits')}}" class="btn btn-icon btn-primary  "><i class="fa fa-reply"></i><span>Retour au catalogue</span></a>
+			            </div>
+			            <div class="col-md-6 text-right">
+			              <a  href="{{path('livraison')}}" class="btn btn-icon btn-black"><i class="fa fa-check"></i><span>Valider le Panier </span></a>
+			            </div>
+			         </div>
+        </div>
+		        
+          <span class="titre_header">Quelques Informations </span>
+
+            <div class="row">
+                <div class="col-md-3 ">
+                   <a href="#" class="pub pub-center ">
+                         <span class="pub-icon "><i class="fa fa-users"></i></span>
+                         <h4> Nos clients </h4>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+                        <h4> Garantie produits </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+               <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+                        <h4>Promotions </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+                        <h4>Paiement sécurisé </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+            </div>    
+          </div>
+{% endblock %}
+    
+

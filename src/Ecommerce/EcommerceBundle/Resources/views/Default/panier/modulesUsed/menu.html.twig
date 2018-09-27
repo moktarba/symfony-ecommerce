@@ -1,0 +1,11 @@
+<div class="cart ">
+	 <i class="fa fa-shopping-cart"></i>
+	{% if articles == 0  %}
+    	<a href="{{path('panier')}}" >Panier: Aucun article dans votre panier </a>
+    {% elseif  articles == 1 %}
+    	<a href="{{path('panier')}}" >Panier: 1 article dans votre panier </a>
+    	{% else %}
+    <a href="{{path('panier')}}" >Panier: {{articles}} articles dans votre panier </a>
+	{% endif %}
+   
+</div>

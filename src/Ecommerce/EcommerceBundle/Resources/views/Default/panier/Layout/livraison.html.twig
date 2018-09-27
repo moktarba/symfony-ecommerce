@@ -1,0 +1,131 @@
+{% extends "::base.html.twig" %}
+
+{% block container %}
+    <div class="container">
+        <div class="row pub ">
+           <h4>Panier / validation</h4>
+        </div> 
+
+        {% for message in  app.session.flashbag.get('notification') %}       
+        	<div class="row pub panier">
+                <div class="row pub ">
+                    <p> {{message}}</p>
+                </div>
+        	</div>
+        {% endfor %}
+
+        	<div class="row">	
+	        	<div class= "col-6"> 
+	        		<form method='POST' action = {{ path('validation') }}>
+	              		{% set i = 1 %}
+	              		<h4>Adresse de livraison</h4>
+			            {% for adresse in adresses %}
+			                <p>
+			                	<input type="radio" name="livraison" {%  if loop.index0 -- 0  %}checked = "checked" {% endif %} value = {{ adresse.id }}>
+			                	<span>{{i}}. </span> {{adresse.adresse}}, {{adresse.cp}} - {{adresse.ville}}, {{adresse.pays}} 
+			                    <td>
+			                      	<button><a href="{{ path('adresse_supprimer' , {'id' : adresse.id }) }}">X</a></button>
+			                    </td>
+		                	</p> 
+
+		                {% set i = i + 1%}
+		                {% endfor %}
+		                <hr>
+						<h4>Adresse de facturation</h4>
+			            {% for adresse in adresses %}
+			                <p>
+			                	<input type="radio" name="facturation" {%  if loop.index0 -- 0  %}checked = "checked" {% endif %} value = {{ adresse.id }}>
+			                	<span>{{i}}. </span> {{adresse.adresse}}, {{adresse.cp}} - {{adresse.ville}}, {{adresse.pays}} 
+			                    <td>
+			                      	<button><a href="{{ path('adresse_supprimer' , {'id' : adresse.id }) }}">X</a></button>
+			                    </td>
+		                	</p> 
+
+		                {% set i = i + 1%}
+		                {% endfor %}
+
+
+		              	<div class="row">
+				           <div class="col-md-6 text-left">
+				            <a href="panier" class="btn btn-icon btn-primary  "><i class="fa fa-shopping-cart"></i><span>Retour au panier</span></a>
+				          </div>
+				          <div class="col-md-6 text-right">
+				            <button type = "submit" class="btn btn-icon btn-black"><span>Valider adresse </span></button>
+				          </div>
+				       	</div>
+			       </form>
+	        	</div>
+	        	<div class="col-6">
+	        		<fieldset>
+	        			<form  method="POST">
+	        				<h4 class="label label-primary">Ajouter une adresse</h4>
+	        			{{form_start(form)}}
+		        			<div class="form-group">
+		        				{{ form_row(form.nom, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.prenom, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.adresse, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.complement, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.telephone, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.cp, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.ville, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<div class="form-group">
+		        				{{ form_row(form.pays, { 'attr': {'class': 'form-control'} }) }}
+		        			</div>
+		        			<button type="submit" class="btn btn-primary">Ajouter adresse</button>
+	        			{{form_end(form)}}
+	        			
+	        		</form>
+	        		</fieldset>
+	        	</div>
+        	</div>	<!-- end class row -->
+    	</div>	
+        
+    </div>
+
+    <span class="titre_header">Quelques Informations </span>
+    <div class="row">
+        <div class="col-md-3 ">
+           <a href="#" class="pub pub-center ">
+                 <span class="pub-icon "><i class="fa fa-users"></i></span>
+                 <h4> Nos clients </h4>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+           </a>
+        </div>
+        <div class="col-md-3  ">
+           <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+                <h4> Garantie produits </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+           </a>
+        </div>
+       <div class="col-md-3  ">
+           <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+                <h4>Promotions </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+           </a>
+        </div>
+        <div class="col-md-3  ">
+           <a href="#" class="pub pub-center ">
+                <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+                <h4>Paiement sécurisé </h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+           </a>
+        </div>
+    </div>        
+
+
+{% endblock %}

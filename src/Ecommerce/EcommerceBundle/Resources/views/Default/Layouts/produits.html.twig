@@ -1,0 +1,192 @@
+{% extends '::base.html.twig' %}
+{% block container %}
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3 sidebar">
+            <div class="collections ">
+                <div class="header rounded-top">
+                    <i class="fa fa-list"></i>
+                    <span>Collections</span>
+                </div>
+                <ul>
+                    <li> <a href="catalogue/eos-recusandae-ab">Eos recusandae ab.</a> </li>
+                    <li> <a href="catalogue/vitae-et">Vitae et.</a> </li>
+                    <li> <a href="catalogue/aspernatur-repellat">Aspernatur repellat.</a> </li>
+                    <li> <a href="catalogue/officia-sequi">Officia sequi.</a> </li>
+                    <li> <a href="catalogue/enim-amet-est">Enim amet est.</a> </li>
+                </ul>
+            </div>
+
+            <div class="collections collection-simple">
+                <div class="header">
+                    <i class="fa fa-list"></i>
+                    <span>Marques</span>
+                </div>
+                <ul>
+                    <li> <a href="catalogue/marque/nulla-id">Nulla id.</a> </li>
+                    <li> <a href="catalogue/marque/facilis-et">Facilis et.</a> </li>
+                    <li> <a href="catalogue/marque/quo">Quo.</a> </li>
+                    <li> <a href="catalogue/marque/enim-qui">Enim qui.</a> </li>
+                    <li> <a href="catalogue/marque/voluptatibus-et">Voluptatibus et.</a> </li>
+                    <li> <a href="catalogue/marque/modi">Modi.</a> </li>
+                </ul>
+            </div>
+
+            <div class="collections collection-simple collection-square">
+                <div class="header">
+                    <i class="fa fa-list"></i>
+                    <span>Pointures</span>
+                </div>
+                <ul>
+                    <li> <a href="">34</a> </li>
+                    <li> <a href="">35</a> </li>
+                    <li> <a href="">36</a> </li>
+                    <li> <a href="">37</a> </li>
+                    <li> <a href="">38</a> </li>
+                    <li> <a href="">39</a> </li>
+                    <li> <a href="">40</a> </li>
+                    <li> <a href="">41</a> </li>
+                    <li> <a href="">42</a> </li>
+                    <li> <a href="">43</a> </li>
+                    <li> <a href="">44</a> </li>
+                    <li> <a href="">45</a> </li>
+                    <li> <a href="">46</a> </li>
+
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="pub">
+                une pub
+            </div>
+        </div>
+        <div class="col-md-9 contenu">
+            <div class="row header_line ">
+                <div class="col-md-4">
+                    <ul class="list-icons">
+                        <li class="active"><a href=""><i class="fa fa-bars"></i></a></li>
+                        <li><a href=""><i class="fa fa-th-list"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-8">
+                    <form action="produits" method="GET">
+                        <ul class="list-actions">
+                            <li>
+                                <label>Trier par</label>
+                                <select class="custom-select" name="ordre">
+                                <option value="all" >All</option>
+                                <option value="new" >Nouveautés</option>
+                                <option value="ASC" >Noms : A-Z</option>
+                                <option value="DESC" >Noms : Z-A</option>
+                                <option value="prix-desc" >Prix décroissant</option>
+                                <option value="prix-asc" >Prix croissant</option>
+                                <option value="promotion" >Promotions</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label>Afficher</label>
+                                <select class="custom-select" name="perpage">
+                                <option value="6" >6</option>
+                                <option value="9" >9</option>
+                                <option value="12" >12</option>
+                                <option value="15" >15</option>
+                                <option value="18" >18</option>
+                                <option value="21" >21</option>
+                                </select>
+                            </li>
+                        </ul>
+
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="  products">
+                <div class="row">
+                    {% for produit in produits %}
+                    <div class="col-md-4 display_list display_grid">
+
+                        <div class="product">
+
+                            <!--  <span class="bulle">Infos</span> -->
+                            <span class="bulle bulle-promo">Promo</span>
+                            <!-- <span class="bulle bulle-primary">New</span> -->
+
+                            <a href="{{ path('produit', {'id' : produit.id }) }}"><img src="{{produit.image.path}}" alt="{{produit.nom}}"></a>
+
+                            <a href="{{ path('produit', {'id' : produit.id }) }}"><h4>{{produit.nom}}</h4></a>
+                            <p>{{produit.description}}</p>
+                            <div class="actions">
+
+                                <span class="price promo">{{produit.prix}} € </span>  <em class="promo">34.01 €</em>
+                                <a href="panier/add/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-primary" alt="Ajouter au panier"><i class="fa fa-cart-arrow-down"></i></a>
+                                <a href="produit/voluptas-possimus-consequuntur-ut-voluptas-ut-aut-sit" class="btn btn-icon btn-secondary" alt="détails"><i class="fa fa-eye"></i></a>
+                                <a href="#" class="btn btn-icon btn-secondary  btn-neutre like" alt="favoris" data-id=1><i class="fa fa-heart"></i></a>
+                                    {% if panier[produit.id] is not defined %}
+                                        <button type="submit" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><a href="{{ path('ajouter', {'id' : produit.id } ) }}"><span>Ajouter au panier</span></a></button>  
+                                    {% else %}
+                                        <button disabled ="disabled" class="btn btn-icon btn-primary" ><i class="fa fa-cart-arrow-down"></i><a href="{{ path('panier')}}"><span>Voir le panier</span></a></button> 
+                                    {% endif %}
+                                                                  
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div >
+                <ul class="pagination">
+
+                    <li class="disabled"><span>&laquo;</span></li>
+                    <li class="active"><span>1</span></li>
+                    <li><a href="catalogue?page=2">2</a></li>
+                    <li><a href="catalogue?page=3">3</a></li>
+                    <li><a href="catalogue?page=4">4</a></li>
+                    <li><a href="catalogue?page=5">5</a></li>
+
+                    <li><a href="catalogue?page=2" rel="next">&raquo;</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <span class="titre_header">Quelques Informations </span>
+
+    <div class="row">
+        <div class="col-md-3 ">
+        <a href="#" class="pub pub-center ">
+        <span class="pub-icon "><i class="fa fa-users"></i></span>
+        <h4> Nos clients </h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+        </a>
+        </div>
+        <div class="col-md-3  ">
+        <a href="#" class="pub pub-center ">
+        <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+        <h4> Garantie produits </h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+        </a>
+        </div>
+        <div class="col-md-3  ">
+        <a href="#" class="pub pub-center ">
+        <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+        <h4>Promotions </h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+        </a>
+        </div>
+        <div class="col-md-3  ">
+        <a href="#" class="pub pub-center ">
+        <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+        <h4>Paiement sécurisé </h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+        </a>
+        </div>
+    </div>
+</div>
+{% endblock  %}

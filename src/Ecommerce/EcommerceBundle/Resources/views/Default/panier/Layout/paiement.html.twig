@@ -1,0 +1,77 @@
+{% extends "::base.html.twig" %}
+  {% block container %}
+      
+      <div class="container">
+        <div class="row pub ">
+           <h4>Panier / Paiement</h4>
+        </div>
+
+	
+        <div class="row pub panier">
+          <div class="row">
+               <div class="col-md-6 cell example example2" id ="Btn-stripe">
+                  <h3>Paiment avec carte</h3>
+                    <hr>
+                  <form action="http://shop.dev/paiement/stripe" method="POST">
+              
+                       <input type="hidden" name="_token" value="DNsk1pXvVwa4lOAizpB7ZIGwWZyjg1lH7SuFXoSx">
+                      <script
+                              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                              data-key="pk_test_qr7UlJgRZcY0FCiQupXviTVy"
+                              data-amount="10908"
+                              data-name="E-Shop"
+                              data-description="Site de vente en ligne"
+                              data-image="http://shop.dev/img/logo.png"
+                              data-locale="auto"
+                              data-currency="eur">
+                      </script>
+                  </form>
+                </div>
+
+              <div class="col-md-6 col-md-6 cell example example2" id ="Btn-paypal" >
+                <h3>Paiement par Paypal</h3>
+                <hr>
+                <a href="http://shop.dev/paiement/paypal" class="link">
+                  <img src="http://shop.dev/img/paypal.jpg" alt="paypal">
+                </a>
+              </div>
+          </div>
+
+        </div>
+
+        <span class="titre_header">Quelques Informations </span>
+
+            <div class="row">
+                <div class="col-md-3 ">
+                   <a href="#" class="pub pub-center ">
+                         <span class="pub-icon "><i class="fa fa-users"></i></span>
+                         <h4> Nos clients </h4>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-desktop"></i></span>
+                        <h4> Garantie produits </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+               <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-bullhorn"></i></span>
+                        <h4>Promotions </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+                <div class="col-md-3  ">
+                   <a href="#" class="pub pub-center ">
+                        <span class="pub-icon "><i class="fa fa-credit-card"></i></span>
+                        <h4>Paiement sécurisé </h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dfsf. </p>
+                   </a>
+                </div>
+            </div>        
+    </div>
+
+    
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends '::Layouts/layout.html.twig' %}
+
+{% block container %}
+	<div class = "col-md-10 center">
+		<div clas="border border-light border border-light">
+			<h1>{{faq.titre }}</h1>
+			<p>{{faq.description | raw}}</p>
+		</div>
+	</div>
+
+{% endblock %}

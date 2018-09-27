@@ -1,0 +1,78 @@
+<?php
+
+namespace Ecommerce\EcommerceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProduitCommande
+ *
+ * @ORM\Table(name="produitcommande")
+ * @ORM\Entity(repositoryClass="Ecommerce\EcommerceBundle\Repository\ProduitCommandeRepository")
+ */
+class ProduitCommande
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="star", type="string", length=255)
+     */
+    private $star;
+
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Commande")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $commande;    
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Produit")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $produit;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set star
+     *
+     * @param string $star
+     *
+     * @return ProduitCommande
+     */
+    public function setStar($star)
+    {
+        $this->star = $star;
+
+        return $this;
+    }
+
+    /**
+     * Get star
+     *
+     * @return string
+     */
+    public function getStar()
+    {
+        return $this->star;
+    }
+}
+
